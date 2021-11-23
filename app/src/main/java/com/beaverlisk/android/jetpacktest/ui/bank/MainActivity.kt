@@ -1,9 +1,11 @@
-package com.beaverlisk.android.jetpacktest
+package com.beaverlisk.android.jetpacktest.ui.bank
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.beaverlisk.android.jetpacktest.ui.main.MainFragment
+import com.beaverlisk.android.jetpacktest.R
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -11,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.main_activity)
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                    .replace(R.id.container, MainFragment.newInstance())
+                    .replace(R.id.container, BankFragment.newInstance())
                     .commitNow()
         }
     }
