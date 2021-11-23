@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="rarity_basic">#909091</color>
+    <color name="rarity_fine">#3F51B5</color>
+    <color name="rarity_masterwork">#4CAF50</color>
+    <color name="rarity_rare">#FFEB3B</color>
+    <color name="rarity_exotic">#FF9800</color>
+    <color name="rarity_legendary">#9C27B0</color>
+    <color name="rarity_transmuted">#FFBB86FC</color>
+</resources>
