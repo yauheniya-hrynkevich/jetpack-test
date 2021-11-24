@@ -1,4 +1,4 @@
-package com.beaverlisk.android.jetpacktest.di.model
+package com.beaverlisk.android.jetpacktest.di
 
 import com.beaverlisk.android.jetpacktest.data.api.GW2AccountService
 import com.beaverlisk.android.jetpacktest.data.repository.AccountRepository
@@ -9,7 +9,6 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ViewModelComponent
-import dagger.hilt.components.SingletonComponent
 
 @Module
 @InstallIn(ViewModelComponent::class)

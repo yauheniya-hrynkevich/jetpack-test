@@ -1,4 +1,4 @@
-package com.beaverlisk.android.jetpacktest.ui.base
+package com.beaverlisk.android.jetpacktest.ui.common
 
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
@@ -11,7 +11,6 @@ import androidx.compose.ui.platform.LocalContext
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.CustomTarget
 
-//todo provide via class
 
 @Composable
 fun loadPicture(url: String, @DrawableRes placeholderRes: Int): MutableState<Bitmap?> {

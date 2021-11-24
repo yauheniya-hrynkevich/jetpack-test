@@ -10,49 +10,53 @@ import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.beaverlisk.android.jetpacktest.R
 import com.beaverlisk.android.jetpacktest.Rarity
 import com.beaverlisk.android.jetpacktest.data.model.Item
-import com.beaverlisk.android.jetpacktest.ui.base.loadPicture
+import com.beaverlisk.android.jetpacktest.ui.common.NavigationToolbar
+import com.beaverlisk.android.jetpacktest.ui.common.loadPicture
+import com.beaverlisk.android.jetpacktest.ui.navigation.NavigationScreen
 
 @Composable
-fun BankScreen(bankItems: List<Item>) {
-    Scaffold(
-        content = {
-            BankItemsList(bankItems)
-        }
-    )
+fun BankContentScreen(navController: NavController, viewModel: BankViewModel) {
+    Column {
+        NavigationToolbar(
+            title = LocalContext.current.getString(NavigationScreen.SCREEN_BANK.title)
+        ) {}
+        BankItemsList(viewModel.bankContentStateList)  // Put the items to overlap here
+    }
 }
 
 @Composable
 fun BankItemsList(bankItems: List<Item>) {
     LazyColumn {
         itemsIndexed(bankItems) { index, item ->
-            BankItemListItem(item)
+            BankListItem(item)
         }
     }
 }
 
 @Preview
 @Composable
-fun BankItemListItem(item: Item = Item.createMockObject()) {
-    Row(
-        modifier = Modifier
-            .padding(8.dp)
-    ) {
+fun BankListItem(item: Item = Item.createMockObject()) {
+    Row(modifier = Modifier.padding(8.dp)) {
         Column {
-            ItemImage(url = item.icon, contentDescription = item.name)
+            BankItemImage(
+                url = item.icon,
+                contentDescription = item.name
+            )
         }
         Column {
             Text(
@@ -74,7 +78,7 @@ fun BankItemListItem(item: Item = Item.createMockObject()) {
 }
 
 @Composable
-private fun ItemImage(url: String, contentDescription: String) {
+private fun BankItemImage(url: String, contentDescription: String) {
     loadPicture(url = url, placeholderRes = R.drawable.ic_gw2_logo).value?.asImageBitmap()?.let {
         Image(
             bitmap = it,

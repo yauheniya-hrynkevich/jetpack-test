@@ -1,4 +1,4 @@
-package com.beaverlisk.android.jetpacktest.di.model
+package com.beaverlisk.android.jetpacktest.di
 
 object DIContract {
     const val NAME_BASE_URL = "baseUrl"

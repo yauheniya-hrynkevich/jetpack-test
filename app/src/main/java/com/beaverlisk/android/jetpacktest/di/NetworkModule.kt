@@ -1,4 +1,4 @@
-package com.beaverlisk.android.jetpacktest.di.model
+package com.beaverlisk.android.jetpacktest.di
 
 import android.content.SharedPreferences
 import com.beaverlisk.android.jetpacktest.BuildConfig
