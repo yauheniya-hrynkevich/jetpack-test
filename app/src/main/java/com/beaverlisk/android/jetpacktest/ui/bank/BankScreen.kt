@@ -16,7 +16,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -25,18 +24,11 @@ import androidx.navigation.NavController
 import com.beaverlisk.android.jetpacktest.R
 import com.beaverlisk.android.jetpacktest.Rarity
 import com.beaverlisk.android.jetpacktest.data.model.Item
-import com.beaverlisk.android.jetpacktest.ui.common.NavigationToolbar
 import com.beaverlisk.android.jetpacktest.ui.common.loadPicture
-import com.beaverlisk.android.jetpacktest.ui.navigation.NavigationScreen
 
 @Composable
 fun BankContentScreen(navController: NavController, viewModel: BankViewModel) {
-    Column {
-        NavigationToolbar(
-            title = LocalContext.current.getString(NavigationScreen.SCREEN_BANK.title)
-        ) {}
-        BankItemsList(viewModel.bankContentStateList)  // Put the items to overlap here
-    }
+    BankItemsList(viewModel.bankContentStateList)  // Put the items to overlap here
 }
 
 @Composable

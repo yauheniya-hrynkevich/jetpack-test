@@ -4,12 +4,15 @@ import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.material.Scaffold
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.beaverlisk.android.jetpacktest.ui.bank.BankContentScreen
 import com.beaverlisk.android.jetpacktest.ui.bank.BankViewModel
-import com.beaverlisk.android.jetpacktest.ui.navigation.NavigationScreen
+import com.beaverlisk.android.jetpacktest.ui.navigation.BottomNavigationBar
+import com.beaverlisk.android.jetpacktest.ui.common.NavigationToolbar
+import com.beaverlisk.android.jetpacktest.ui.navigation.MainNavigationRoute
 import com.beaverlisk.android.jetpacktest.ui.theme.AppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -23,12 +26,17 @@ class HomeActivity : AppCompatActivity() {
         setContent {
             val navController = rememberNavController()
             AppTheme {
-                NavHost(navController, startDestination = NavigationScreen.SCREEN_BANK.name) {
-                    composable(NavigationScreen.SCREEN_BANK.name) {
-                        BankContentScreen(navController, bankViewModel)
-                    }
-                    composable(NavigationScreen.SCREEN_ITEM_DETAILS.name) {
-                        BankContentScreen(navController, bankViewModel)
+                Scaffold(
+                    topBar = { NavigationToolbar("") {} },
+                    bottomBar = { BottomNavigationBar() }
+                ) {
+                    NavHost(navController, startDestination = MainNavigationRoute.Bank.route) {
+                        composable(MainNavigationRoute.Bank.route) {
+                            BankContentScreen(navController, bankViewModel)
+                        }
+                        composable(MainNavigationRoute.Bank.route) {
+                            BankContentScreen(navController, bankViewModel)
+                        }
                     }
                 }
             }
