@@ -1,23 +1,23 @@
 package com.beaverlisk.android.jetpacktest.ui.home
 
 import android.os.Bundle
+import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.material.Scaffold
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.beaverlisk.android.jetpacktest.ui.bank.BankContentScreen
 import com.beaverlisk.android.jetpacktest.ui.bank.BankViewModel
-import com.beaverlisk.android.jetpacktest.ui.navigation.BottomNavigationBar
 import com.beaverlisk.android.jetpacktest.ui.common.NavigationToolbar
+import com.beaverlisk.android.jetpacktest.ui.navigation.BottomNavigationBar
 import com.beaverlisk.android.jetpacktest.ui.navigation.MainNavigationRoute
 import com.beaverlisk.android.jetpacktest.ui.theme.AppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : ComponentActivity() {
 
     private val bankViewModel: BankViewModel by viewModels()
 

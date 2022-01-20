@@ -1,8 +1,9 @@
-package com.beaverlisk.android.jetpacktest
+package com.beaverlisk.android.jetpacktest.ui.common
 
 import androidx.annotation.ColorRes
+import com.beaverlisk.android.jetpacktest.R
 
-enum class Rarity constructor(
+enum class ItemRarity constructor(
     private val apiName: String,
     @ColorRes val colorRes: Int
 ) {
@@ -17,7 +18,7 @@ enum class Rarity constructor(
 
     companion object {
 
-        fun getFromStringValue(value: String): Rarity = values().find {
+        fun getFromStringValue(value: String): ItemRarity = values().find {
             it.apiName.equals(value, true)
         } ?: UNKNOWN
     }

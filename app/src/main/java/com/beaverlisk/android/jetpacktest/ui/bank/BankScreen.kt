@@ -22,7 +22,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.beaverlisk.android.jetpacktest.R
-import com.beaverlisk.android.jetpacktest.Rarity
+import com.beaverlisk.android.jetpacktest.ui.common.ItemRarity
 import com.beaverlisk.android.jetpacktest.data.model.Item
 import com.beaverlisk.android.jetpacktest.ui.common.loadPicture
 
@@ -63,7 +63,7 @@ fun BankListItem(item: Item = Item.createMockObject()) {
             Text(
                 text = item.rarity,
                 style = MaterialTheme.typography.body2,
-                color = colorResource(Rarity.getFromStringValue(item.rarity).colorRes)
+                color = colorResource(ItemRarity.getFromStringValue(item.rarity).colorRes)
             )
         }
     }

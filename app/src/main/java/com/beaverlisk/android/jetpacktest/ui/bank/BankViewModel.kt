@@ -6,6 +6,7 @@ import androidx.lifecycle.viewModelScope
 import com.beaverlisk.android.jetpacktest.data.model.Item
 import com.beaverlisk.android.jetpacktest.data.repository.AccountRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -21,9 +22,14 @@ class BankViewModel @Inject constructor(private val repository: AccountRepositor
 
     private fun getBankContent() {
         viewModelScope.launch {
-            repository.getBankContent().collect {
-                bankContentStateList.addAll(it)
-            }
+            repository.getBankContent()
+                .catch {
+                    // exception ->
+                    //handleError(exception.message)
+                }
+                .collect { bankItems ->
+                    bankContentStateList.addAll(bankItems)
+                }
         }
     }
 }
