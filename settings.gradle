@@ -6,6 +6,7 @@ dependencyResolutionManagement {
         jcenter() // Warning: this repository is going to shut down soon
     }
 }
-rootProject.name = "JetpackTest"
-include ':app'
+rootProject.name = "Android Samples"
+include ':compose'
 include ':algorithms'
+include ':architecture'

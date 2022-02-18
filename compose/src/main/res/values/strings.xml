@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Compose Sample</string>
+
+    <string name="title_screen_bank">Bank Content</string>
+    <string name="title_screen_item_details">Item details</string>
+    <string name="title_screen_home">Home</string>
+</resources>
