@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="12dp">
+
+    <ImageView
+        android:id="@+id/iv_achievement_category_icon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:contentDescription="@null" />
+
+    <TextView
+        android:id="@+id/tv_achievement_category_name"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:textAppearance="?attr/textAppearanceBody2"
+        tools:text="Achievement category name" />
+</LinearLayout>

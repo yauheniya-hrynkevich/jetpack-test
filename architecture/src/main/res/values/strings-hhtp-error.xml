@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="error_no_network">No network</string>
+    <string name="error_access_denied">Access Denied</string>
+    <string name="error_unauthorized">You must authorize to proceed</string>
+    <string name="error_service_unavailable">Service is currently unavailable. Please, try again lager</string>
+    <string name="error_generic">Oops, something went wrong</string>
+
+</resources>
